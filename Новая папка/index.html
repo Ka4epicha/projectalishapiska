@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Зайчик с Валентинычем тебя ❤</title> 
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffdd66, #ffc0cb);
+            color: #444;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        .collage {
+            display: grid;
+            grid-template-columns: repeat(3, 120px);
+            gap: 15px;
+            padding: 20px;
+        }
+        .collage img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .collage img:hover {
+            transform: scale(1.1);
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #f6699f;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.2s;
+        }
+        .button:hover {
+            background-color: #ff3366;
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        video {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function openModal() {
+            document.getElementById("modal").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script> 
+</head>
+<body> 
+    <h1>Котеначек, я тебя люблю</h1>
+    <p>Ты просто чудо, а это мини-подгон для тебя 💖</p>
+    <div class="collage"> 
+        <img src="photo1.jpg" alt="Фото1">
+        <img src="photo2.jpg" alt="Фото2">
+        <img src="photo3.jpg" alt="Фото3">
+        <img src="photo4.jpg" alt="Фото4">
+        <img src="photo5.jpg" alt="Фото5">
+        <img src="photo6.jpg" alt="Фото6">
+    </div>
+    <button class="button" onclick="openModal()">Жмякни по попке 🍑</button>
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <div id="modal" class="modal">
+        <p>Подгон</p>
+        <video controls> 
+            <source src="алишка_зайкина.mp4" type="video/mp4">
+        </video> 
+        <br><br>
+        <button class="button" onclick="closeModal()">Прикрыть лавочку</button>
+    </div>
+</body>
+</html>
